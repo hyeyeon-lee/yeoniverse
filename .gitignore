@@ -1,0 +1,7 @@
+.idea
+
+# Turborepo
+.turbo
+
+# Dependencies
+node_modules
