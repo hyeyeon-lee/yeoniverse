@@ -19,6 +19,7 @@ export type Database = {
           created_at: string
           date: string | null
           id: number
+          memo: string | null
           user: string
           weight: number
         }
@@ -26,6 +27,7 @@ export type Database = {
           created_at?: string
           date?: string | null
           id?: number
+          memo?: string | null
           user?: string
           weight: number
         }
@@ -33,6 +35,7 @@ export type Database = {
           created_at?: string
           date?: string | null
           id?: number
+          memo?: string | null
           user?: string
           weight?: number
         }

@@ -1,0 +1,235 @@
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 입력 카드 */
+.inputCard {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.todayLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 4px 0;
+}
+
+.todayDate {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 24px 0;
+}
+
+.inputArea {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.weightInput {
+  width: 160px;
+  background: #f5f7fa;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.15s, background 0.15s;
+  -moz-appearance: textfield;
+}
+
+.weightInput::-webkit-outer-spin-button,
+.weightInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.weightInput::placeholder {
+  color: #ccc;
+}
+
+.weightInput:focus {
+  border-color: #4f8ef7;
+  background: #fff;
+}
+
+.unit {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #888;
+}
+
+.memoInput {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(245, 247, 250, 0.63);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #333;
+  outline: none;
+  transition: border-color 0.15s, background 0.15s;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.memoInput::placeholder {
+  color: #ccc;
+}
+
+.memoInput:focus {
+  border-color: #4f8ef7;
+  background: #fff;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 16px;
+  background: #4f8ef7;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.submitButton:hover {
+  background: #3a7de0;
+}
+
+.submitButton:disabled {
+  background: #c5d9fb;
+  cursor: not-allowed;
+}
+
+/* 히스토리 카드 */
+.historyCard {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.sectionTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 16px 0;
+}
+
+.historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.historyItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.historyDateGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 72px;
+}
+
+.historyDate {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.historyTime {
+  font-size: 0.72rem;
+  color: #bbb;
+  font-variant-numeric: tabular-nums;
+}
+
+.historyCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.historyMemo {
+  font-size: 0.72rem;
+  color: #aaa;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.historyWeight {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.diffUp {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #e53e3e;
+  min-width: 44px;
+  text-align: right;
+}
+
+.diffDown {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #38a169;
+  min-width: 44px;
+  text-align: right;
+}
+
+.diffNone {
+  font-size: 0.8rem;
+  color: #ccc;
+  min-width: 44px;
+  text-align: right;
+}
+
+.empty {
+  text-align: center;
+  color: #bbb;
+  font-size: 0.9rem;
+  padding: 20px 0;
+  margin: 0;
+}

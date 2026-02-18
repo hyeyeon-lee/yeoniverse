@@ -2,8 +2,7 @@ import { createBrowserRouter } from 'react-router';
 import LoginPage from '@/pages/login';
 import SignUpPage from '@/pages/signup';
 import DashboardPage from '@/pages/dashboard';
-import RecordPage from '@/pages/record';
-import HistoryPage from '@/pages/history';
+import WeightPage from '@/pages/weight';
 import ProtectedRoute from './protected-route';
 
 const router = createBrowserRouter([
@@ -23,12 +22,8 @@ const router = createBrowserRouter([
         element: <DashboardPage />,
       },
       {
-        path: '/record',
-        element: <RecordPage />,
-      },
-      {
-        path: '/history',
-        element: <HistoryPage />,
+        path: '/weight',
+        element: <WeightPage />,
       },
     ],
   },
