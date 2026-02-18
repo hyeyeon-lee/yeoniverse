@@ -1,6 +1,39 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { signIn, signInWithGoogle } from '@/features/auth';
 import styles from './index.module.css';
 
 export default function LoginPage() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+    try {
+      await signIn(email, password);
+      navigate('/');
+    } catch (err) {
+      setError('이메일 또는 비밀번호가 올바르지 않아요.');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleGoogleLogin() {
+    alert("아직...")
+    /*setError('');
+    try {
+      await signInWithGoogle();
+    } catch (err) {
+      setError('Google 로그인에 실패했어요.');
+    }*/
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -9,35 +42,50 @@ export default function LoginPage() {
           <p>건강한 하루를 기록해보세요</p>
         </div>
 
-        <button className={styles.googleButton}>
+        <button className={styles.googleButton} onClick={handleGoogleLogin}>
           <GoogleIcon />
           Google로 계속하기
         </button>
 
         <div className={styles.divider}>또는</div>
 
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
             <label htmlFor="email">이메일</label>
-            <input id="email" type="email" placeholder="example@email.com" />
+            <input
+              id="email"
+              type="email"
+              placeholder="example@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
 
           <div className={styles.inputGroup}>
             <label htmlFor="password">비밀번호</label>
-            <input id="password" type="password" placeholder="비밀번호 입력" />
+            <input
+              id="password"
+              type="password"
+              placeholder="비밀번호 입력"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
 
           <button type="button" className={styles.forgotPassword}>
             비밀번호를 잊으셨나요?
           </button>
 
-          <button type="submit" className={styles.loginButton}>
-            로그인
+          {error && <p className={styles.error}>{error}</p>}
+
+          <button type="submit" className={styles.loginButton} disabled={loading}>
+            {loading ? '로그인 중...' : '로그인'}
           </button>
         </form>
 
         <p className={styles.signUp}>
-          아직 계정이 없으신가요? <span>회원가입</span>
+          아직 계정이 없으신가요?{' '}
+          <span onClick={() => navigate('/signup')}>회원가입</span>
         </p>
       </div>
     </div>

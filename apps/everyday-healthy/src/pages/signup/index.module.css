@@ -33,45 +33,6 @@
   margin: 0;
 }
 
-.googleButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 12px;
-  border: 1.5px solid #e0e0e0;
-  border-radius: 10px;
-  background: #fff;
-  color: #333;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
-}
-
-.googleButton:hover {
-  background: #f8f8f8;
-  border-color: #bbb;
-}
-
-.divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 24px 0;
-  color: #bbb;
-  font-size: 0.8rem;
-}
-
-.divider::before,
-.divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: #e8e8e8;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -105,17 +66,7 @@
   border-color: #4f8ef7;
 }
 
-.forgotPassword {
-  text-align: right;
-  font-size: 0.8rem;
-  color: #4f8ef7;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.loginButton {
+.signUpButton {
   width: 100%;
   padding: 13px;
   background: #4f8ef7;
@@ -129,27 +80,39 @@
   margin-top: 4px;
 }
 
-.loginButton:hover {
+.signUpButton:hover {
   background: #3a7de0;
 }
 
-.signUp {
-  text-align: center;
-  margin-top: 24px;
-  font-size: 0.85rem;
-  color: #888;
-}
-
-.signUp span {
-  color: #4f8ef7;
-  font-weight: 500;
-  cursor: pointer;
+.signUpButton:disabled {
+  background: #a0bef8;
+  cursor: not-allowed;
 }
 
 .error {
   font-size: 0.85rem;
   color: #e53e3e;
   margin: 0;
+}
+
+.success {
+  font-size: 0.85rem;
+  color: #38a169;
+  text-align: center;
+  margin: 0;
+}
+
+.login {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.login span {
+  color: #4f8ef7;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 @media (max-width: 480px) {
