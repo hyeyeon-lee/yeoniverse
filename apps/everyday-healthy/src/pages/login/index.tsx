@@ -25,13 +25,12 @@ export default function LoginPage() {
   }
 
   async function handleGoogleLogin() {
-    alert("아직...")
-    /*setError('');
+    setError('');
     try {
       await signInWithGoogle();
     } catch (err) {
       setError('Google 로그인에 실패했어요.');
-    }*/
+    }
   }
 
   return (
