@@ -4,8 +4,7 @@ export async function getWeightLogs() {
   const { data, error } = await supabase
     .from('weight_log')
     .select('*')
-    .order('created_at', { ascending: false })
-    .limit(20);
+    .order('created_at', { ascending: false });
 
   if (error) throw error;
   return data;
