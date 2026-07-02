@@ -1,0 +1,152 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+}
+
+.header {
+  order: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--en-border);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  color: #4d6bfe;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.notebookSelect {
+  max-width: 180px;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 0.85rem;
+  color: var(--en-text);
+  cursor: pointer;
+}
+
+.notebookSelect:hover {
+  background: var(--en-bg-sub);
+}
+
+.status {
+  flex: 1;
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--en-text-sub);
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  color: var(--en-text-sub);
+  cursor: pointer;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.deleteButton:hover {
+  background: var(--en-bg-sub);
+  color: #e53e3e;
+}
+
+.titleInput {
+  order: 1;
+  padding: 20px 20px 4px;
+  border: none;
+  outline: none;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--en-text);
+  background: transparent;
+}
+
+.titleInput::placeholder {
+  color: #c9c9c9;
+}
+
+.content {
+  order: 2;
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 20px 40px;
+  cursor: text;
+}
+
+/* 툴바: 모바일은 하단 고정, 데스크톱은 헤더 아래 */
+.toolbar {
+  order: 3;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  overflow-x: auto;
+  padding: 8px 10px;
+  border-top: 1px solid var(--en-border);
+  background: #fff;
+}
+
+.toolButton,
+.toolButtonActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--en-text);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.toolButton:hover {
+  background: var(--en-bg-sub);
+}
+
+.toolButtonActive {
+  background: #e6f6ea;
+  color: var(--en-green);
+}
+
+@media (min-width: 768px) {
+  .backButton {
+    display: none;
+  }
+
+  .toolbar {
+    order: 1;
+    border-top: none;
+    border-bottom: 1px solid var(--en-border);
+  }
+
+  .titleInput {
+    order: 2;
+    padding: 28px 32px 4px;
+  }
+
+  .content {
+    order: 3;
+    padding: 8px 32px 60px;
+  }
+}

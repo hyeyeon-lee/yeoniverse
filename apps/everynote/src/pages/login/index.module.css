@@ -1,0 +1,162 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--en-bg-sub);
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--en-text);
+  margin: 0 0 6px 0;
+}
+
+.logo p {
+  font-size: 0.875rem;
+  color: #888;
+  margin: 0;
+}
+
+.googleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  background: #fff;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.googleButton:hover {
+  background: #f8f8f8;
+  border-color: #bbb;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: #bbb;
+  font-size: 0.8rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e8e8e8;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputGroup label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.inputGroup input {
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--en-text);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.inputGroup input:focus {
+  border-color: var(--en-green);
+}
+
+.loginButton {
+  width: 100%;
+  padding: 13px;
+  background: var(--en-green);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 4px;
+}
+
+.loginButton:hover {
+  background: var(--en-green-dark);
+}
+
+.loginButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.signUp {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.signUp span {
+  color: var(--en-green);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.error {
+  font-size: 0.85rem;
+  color: #e53e3e;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .container {
+    align-items: flex-start;
+    background-color: #ffffff;
+  }
+
+  .card {
+    border-radius: 0;
+    padding: 48px 24px;
+    box-shadow: none;
+    min-height: 100vh;
+  }
+}

@@ -1,3 +1,3 @@
 export { createSupabaseClient } from './client';
-export type { WeightEntity } from './types/types';
-export type { Database } from './types/database.types';
+export type { WeightEntity, NotebookEntity, NoteEntity } from './types/types';
+export type { Database, Json } from './types/database.types';

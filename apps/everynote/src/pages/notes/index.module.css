@@ -1,0 +1,145 @@
+.page,
+.pageWithEditor {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.listPane {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px 0;
+  overflow-y: auto;
+}
+
+.editorPane {
+  display: none;
+  flex: 2;
+  min-width: 0;
+  border-left: 1px solid var(--en-border);
+}
+
+/* 모바일: 에디터가 열리면 목록 대신 에디터만 전체 화면 */
+.pageWithEditor .listPane {
+  display: none;
+}
+
+.pageWithEditor .editorPane {
+  display: block;
+  flex: 1;
+  border-left: none;
+}
+
+.header {
+  margin-bottom: 14px;
+}
+
+.header h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.searchBox input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--en-border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.searchBox input:focus {
+  border-color: var(--en-green);
+}
+
+.count {
+  margin: 14px 2px 6px;
+  font-size: 0.78rem;
+  color: var(--en-text-sub);
+}
+
+.empty {
+  padding: 32px 0;
+  text-align: center;
+  color: var(--en-text-sub);
+  font-size: 0.9rem;
+}
+
+.list {
+  list-style: none;
+  padding-bottom: 24px;
+}
+
+.card,
+.cardActive {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--en-border);
+  padding: 18px 4px;
+  cursor: pointer;
+  color: var(--en-text);
+}
+
+.cardActive {
+  background: var(--en-bg-sub);
+  border-radius: 10px;
+}
+
+.card:hover {
+  background: #fafafa;
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardSnippet {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardDate {
+  font-size: 0.78rem;
+  color: var(--en-text-sub);
+}
+
+.editorPlaceholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--en-text-sub);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .listPane,
+  .pageWithEditor .listPane {
+    display: flex;
+    flex: 0 0 340px;
+    border-right: 1px solid var(--en-border);
+  }
+
+  .editorPane,
+  .pageWithEditor .editorPane {
+    display: block;
+    flex: 1;
+    border-left: none;
+  }
+}

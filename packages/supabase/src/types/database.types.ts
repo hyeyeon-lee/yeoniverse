@@ -14,6 +14,71 @@ export type Database = {
   }
   public: {
     Tables: {
+      notebooks: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          updated_at?: string
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      notes: {
+        Row: {
+          content: Json | null
+          content_text: string
+          created_at: string
+          id: string
+          notebook_id: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          content?: Json | null
+          content_text?: string
+          created_at?: string
+          id?: string
+          notebook_id: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Update: {
+          content?: Json | null
+          content_text?: string
+          created_at?: string
+          id?: string
+          notebook_id?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notes_notebook_id_fkey"
+            columns: ["notebook_id"]
+            isOneToOne: false
+            referencedRelation: "notebooks"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       weight_log: {
         Row: {
           created_at: string

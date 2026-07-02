@@ -1,0 +1,216 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* --- 데스크톱 사이드바 --- */
+.sidebar {
+  display: none;
+  flex-direction: column;
+  width: 240px;
+  flex-shrink: 0;
+  background: #f4f4f4;
+  border-right: 1px solid var(--en-border);
+  padding: 20px 12px;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 0 8px;
+}
+
+.newNoteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px;
+  background: var(--en-green);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.newNoteButton:hover {
+  background: var(--en-green-dark);
+}
+
+.newNoteButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.navItem,
+.navItemActive {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--en-text);
+  text-decoration: none;
+}
+
+.navItem:hover {
+  background: #ececec;
+}
+
+.navItemActive {
+  background: #e2e2e2;
+  font-weight: 600;
+}
+
+.notebookList {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: 4px;
+  padding-left: 12px;
+}
+
+.notebookItem,
+.notebookItemActive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--en-text);
+  text-decoration: none;
+}
+
+.notebookItem:hover {
+  background: #ececec;
+}
+
+.notebookItemActive {
+  background: #e2e2e2;
+  font-weight: 600;
+}
+
+.notebookName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notebookCount {
+  font-size: 0.75rem;
+  color: var(--en-text-sub);
+}
+
+.signOutButton {
+  padding: 9px;
+  background: none;
+  border: 1px solid var(--en-border);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--en-text-sub);
+  cursor: pointer;
+}
+
+.signOutButton:hover {
+  background: #ececec;
+}
+
+/* --- 콘텐츠 --- */
+.content,
+.contentFull {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  padding-bottom: 64px; /* 모바일 탭바 높이 */
+}
+
+.contentFull {
+  padding-bottom: 0;
+}
+
+/* --- 모바일 하단 탭바 --- */
+.tabBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 64px;
+  background: #fff;
+  border-top: 1px solid var(--en-border);
+  z-index: 20;
+}
+
+.tab,
+.tabActive {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 0.72rem;
+  color: var(--en-text-sub);
+  text-decoration: none;
+}
+
+.tabActive {
+  color: #4d6bfe;
+  font-weight: 600;
+}
+
+/* --- 모바일 FAB --- */
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 84px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--en-green);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 21;
+}
+
+.fab:disabled {
+  opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex;
+  }
+
+  .tabBar,
+  .fab {
+    display: none;
+  }
+
+  .content,
+  .contentFull {
+    padding-bottom: 0;
+  }
+}

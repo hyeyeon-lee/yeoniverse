@@ -1,0 +1,107 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --en-green: #00a82d;
+  --en-green-dark: #008f26;
+  --en-text: #1a1a1a;
+  --en-text-sub: #737373;
+  --en-border: #e5e5e5;
+  --en-bg: #ffffff;
+  --en-bg-sub: #f7f7f7;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--en-bg);
+  color: var(--en-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, select {
+  font-family: inherit;
+}
+
+/* TipTap 에디터 본문 */
+.tiptap {
+  outline: none;
+  min-height: 40vh;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--en-text);
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #b0b0b0;
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap ul,
+.tiptap ol {
+  padding-left: 1.4em;
+}
+
+.tiptap ul[data-type='taskList'] {
+  list-style: none;
+  padding-left: 0.2em;
+}
+
+.tiptap ul[data-type='taskList'] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tiptap ul[data-type='taskList'] li > label {
+  flex: 0 0 auto;
+  margin-top: 0.3em;
+  user-select: none;
+}
+
+.tiptap ul[data-type='taskList'] li > div {
+  flex: 1 1 auto;
+}
+
+.tiptap ul[data-type='taskList'] input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--en-green);
+  cursor: pointer;
+}
+
+.tiptap ul[data-type='taskList'] li[data-checked='true'] > div {
+  color: var(--en-text-sub);
+  text-decoration: line-through;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid var(--en-border);
+  padding-left: 12px;
+  color: var(--en-text-sub);
+}
+
+.tiptap pre {
+  background: var(--en-bg-sub);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+}
+
+.tiptap h1 { font-size: 1.5rem; }
+.tiptap h2 { font-size: 1.3rem; }
+.tiptap h3 { font-size: 1.15rem; }
